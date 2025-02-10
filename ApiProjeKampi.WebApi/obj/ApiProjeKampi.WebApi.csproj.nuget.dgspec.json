@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Volumes/Asena/ApiProjeKampi/ApiProjeKampi.WebApi/ApiProjeKampi.WebApi.csproj": {}
+    "C:\\Users\\dev13\\Documents\\GitHub\\ApiProjectCamp\\ApiProjeKampi.WebApi\\ApiProjeKampi.WebApi.csproj": {}
   },
   "projects": {
-    "/Volumes/Asena/ApiProjeKampi/ApiProjeKampi.WebApi/ApiProjeKampi.WebApi.csproj": {
+    "C:\\Users\\dev13\\Documents\\GitHub\\ApiProjectCamp\\ApiProjeKampi.WebApi\\ApiProjeKampi.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Volumes/Asena/ApiProjeKampi/ApiProjeKampi.WebApi/ApiProjeKampi.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\dev13\\Documents\\GitHub\\ApiProjectCamp\\ApiProjeKampi.WebApi\\ApiProjeKampi.WebApi.csproj",
         "projectName": "ApiProjeKampi.WebApi",
-        "projectPath": "/Volumes/Asena/ApiProjeKampi/ApiProjeKampi.WebApi/ApiProjeKampi.WebApi.csproj",
-        "packagesPath": "/Users/alialtunoglu/.nuget/packages/",
-        "outputPath": "/Volumes/Asena/ApiProjeKampi/ApiProjeKampi.WebApi/obj/",
+        "projectPath": "C:\\Users\\dev13\\Documents\\GitHub\\ApiProjectCamp\\ApiProjeKampi.WebApi\\ApiProjeKampi.WebApi.csproj",
+        "packagesPath": "C:\\Users\\dev13\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dev13\\Documents\\GitHub\\ApiProjectCamp\\ApiProjeKampi.WebApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/alialtunoglu/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\dev13\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,7 +38,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -82,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.428/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
