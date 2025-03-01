@@ -229,3 +229,4 @@ C:/Users/dev13/Documents/GitHub/ApiProjectCamp/ApiProjeKampi.WebApi/obj/Debug/ne
 /Volumes/KINGSTON/ApiProjectCamp/ApiProjeKampi.WebApi/obj/Debug/net6.0/ApiProjeKampi.WebApi.pdb
 /Volumes/KINGSTON/ApiProjectCamp/ApiProjeKampi.WebApi/obj/Debug/net6.0/ApiProjeKampi.WebApi.genruntimeconfig.cache
 /Volumes/KINGSTON/ApiProjectCamp/ApiProjeKampi.WebApi/obj/Debug/net6.0/ref/ApiProjeKampi.WebApi.dll
+/Volumes/KINGSTON/ApiProjectCamp/ApiProjeKampi.WebApi/bin/Debug/net6.0/AutoMapper.dll

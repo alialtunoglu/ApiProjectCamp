@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Hn5rZRbPvhU=",
+  "dgSpecHash": "oCT9scwvsfo=",
   "success": true,
   "projectFilePath": "/Volumes/KINGSTON/ApiProjectCamp/ApiProjeKampi.WebApi/ApiProjeKampi.WebApi.csproj",
   "expectedPackageFiles": [
+    "/Users/alialtunoglu/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/alialtunoglu/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/alialtunoglu/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/Users/alialtunoglu/.nuget/packages/microsoft.data.sqlclient/2.1.7/microsoft.data.sqlclient.2.1.7.nupkg.sha512",
