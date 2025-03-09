@@ -1,0 +1,22 @@
+@using ApiProjeKampi.WebApi.Dtos.ProductDtos
+@model List<ResultProductDto>
+
+@{
+    ViewData["Title"] = "Ürünler";
+}
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@product.ProductName</h5>
+                    <p class="card-text">@product.ProductDescription</p>
+                    <p class="card-text"><strong>Fiyat: </strong>@product.Price ₺</p>
+                    <a href="#" class="btn btn-primary">Sepete Ekle</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
