@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using ApiProjeKampi.WebApi.Context;
 using ApiProjeKampi.WebApi.Dtos.ProductDtos;
-using ApiProjeKampi.WebApi.Entities;
-using AutoMapper;
+using ApiProjeKampi.WebApi.Services.ProductServices;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,76 +12,97 @@ namespace ApiProjeKampi.WebApi.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private readonly IValidator<Product> _productValidator;
-        private readonly ApiContext _context;
-        private readonly IMapper _mapper;
-        public ProductsController(IValidator<Product> productValidator, ApiContext context, IMapper mapper)
+        private readonly IProductService _productService;
+
+        public ProductsController(IProductService productService)
         {
-            _productValidator = productValidator;
-            _context = context;
-            _mapper = mapper;
+            _productService = productService;
         }
 
         [HttpGet]
         public IActionResult ProductList()
         {
-            var products = _context.Products.ToList();
-            return Ok(products);
+            try
+            {
+                var products = _productService.GetAllProduct();
+                return Ok(products);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+
         [HttpPost]
         public IActionResult CreateProduct(CreateProductDto createProductDto)
         {
-            var product = _mapper.Map<Product>(createProductDto);
-            var validationResult = _productValidator.Validate(product);
-            if (!validationResult.IsValid)
+            try
             {
-                return BadRequest(validationResult.Errors.Select(x => x.ErrorMessage).ToList());
+                _productService.CreateProduct(createProductDto);
+                return Ok("Ekleme İşlemi Başarılı");
             }
-            else 
+            catch (ValidationException ex)
             {
-                _context.Products.Add(product);
-                _context.SaveChanges();
-                return Ok( "Ekleme İşlemi Başarılı");
+                return BadRequest(ex.Errors.Select(x => x.ErrorMessage).ToList());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
+
         [HttpPut]
         public IActionResult UpdateProduct(UpdateProductDto updateProductDto)
         {
-            var product = _mapper.Map<Product>(updateProductDto);
-            var validationResult = _productValidator.Validate(product);
-            if (!validationResult.IsValid)
+            try
             {
-                return BadRequest(validationResult.Errors.Select(x => x.ErrorMessage).ToList());
-            }
-            else
-            {
-                _context.Products.Update(product);
-                _context.SaveChanges();
+                _productService.UpdateProduct(updateProductDto);
                 return Ok("Güncelleme İşlemi Başarılı");
             }
+            catch (ValidationException ex)
+            {
+                return BadRequest(ex.Errors.Select(x => x.ErrorMessage).ToList());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+
         [HttpDelete]
         public IActionResult DeleteProduct(int id)
         {
-            var product = _context.Products.Find(id);
-            if (product == null)
+            try
             {
-                return NotFound("Ürün Bulunamadı");
+                _productService.DeleteProduct(id);
+                return Ok("Silme İşlemi Başarılı");
             }
-            _context.Products.Remove(product);
-            _context.SaveChanges();
-            return Ok("Silme İşlemi Başarılı");
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+
         [HttpGet("GetProduct")]
         public IActionResult GetProduct(int id)
         {
-            var product = _context.Products.Find(id);
-            if (product == null)
+            try
             {
-                return NotFound("Ürün Bulunamadı");
+                var product = _productService.GetByIdProduct(id);
+                return Ok(product);
             }
-            return Ok(_mapper.Map<GetByIdProductDto>(product));
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
-
     }
 }

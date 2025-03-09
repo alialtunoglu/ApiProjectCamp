@@ -1,6 +1,7 @@
 using System.Reflection;
 using ApiProjeKampi.WebApi.Context;
 using ApiProjeKampi.WebApi.Entities;
+using ApiProjeKampi.WebApi.Services.ProductServices;
 using ApiProjeKampi.WebApi.ValidationRules;
 using FluentValidation;
 
@@ -10,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApiContext>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddScoped<IValidator<Product>, ProductValidator>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
