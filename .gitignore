@@ -1,4 +1,5 @@
 # Environment variables
+.idea
 .env
 */**/.env
 bin/
