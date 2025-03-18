@@ -11,5 +11,7 @@ namespace ApiProjeKampi.WebApi.Dtos.ProductDtos
         public string ProductDescription { get; set; }
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
+        public int? CategoryId { get; set; } // Yeni eklenen özellik
+
     }
 }
