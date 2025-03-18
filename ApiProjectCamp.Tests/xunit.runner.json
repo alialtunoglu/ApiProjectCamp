@@ -1,0 +1,5 @@
+{
+  "methodDisplay": "method",
+  "methodDisplayOptions": "replaceUnderscoreWithSpace,useOperatorMonikers",
+  "diagnosticMessages": true
+}
